@@ -118,7 +118,18 @@ var superArray = []
 var finalPassword = []
 
 if(upperCased === true){
-   superArray = superArray.concat(upperCasedCharacters) 
+   superArray = superArray.concat(upperCasedCharacters);
+}
+if(lowerCased === true){
+  superArray = superArray.concat(lowerCasedCharacters)
+}
+
+if(specialCharacters === true){
+  superArray = superArray.concat(specialCharacters);
+}
+
+if(numericCharacters === true){
+  superArray = superArray.concat(numericCharacters);
 }
 
 // if the user says yes to any confirm, we should add that character bank to a super array so that we can then randomize that superArray by the length the user chose
@@ -129,7 +140,7 @@ for (var i = 0; i < passwordLength; i++) {
 }
 
 // how to return an array as a string without the commas? **HINT look up join
-return finalPassword;
+return finalPassword.join('');
 
 }
 
@@ -138,7 +149,8 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password.join('');
+  passwordText.value = password;
+
 
 }
 
