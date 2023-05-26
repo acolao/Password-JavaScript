@@ -6,3 +6,4 @@ Use the prompt box to confirm the types of characters that you would like to inc
 If at least one character type is selected, a random password will generate.
 
 <img src="Assets/Screenshot 2023-05-25 211804.jpg">
+https://acolao.github.io/Password-JavaScript/
