@@ -86,10 +86,8 @@ var upperCasedCharacters = [
   'Z',
 ];
 
-
 function generatePassword() {
-  // when the user comes to the site they click on the generate password button and then a series of prompts appear. the first prompt is the length of the password. followed by the character choices.
-  
+  // when the user comes to the site they click on the generate password button and then a series of prompts appear. the first prompt is the length of the password. followed by the character choices. 
 
 // WHEN prompted for the length of the password
 // THEN I choose a length of at least 8 characters and no more than 128 characters
@@ -114,45 +112,43 @@ if(upperCased === false && lowerCased === false && numeric === false && special 
   return null
 }
 
-var superArray = []
-var finalPassword = []
+var superArray = [];
+var finalPassword = [];
 
 if(upperCased === true){
    superArray = superArray.concat(upperCasedCharacters);
 }
 if(lowerCased === true){
-  superArray = superArray.concat(lowerCasedCharacters)
+  superArray = superArray.concat(lowerCasedCharacters);
 }
 
-if(specialCharacters === true){
+if(special === true){
   superArray = superArray.concat(specialCharacters);
 }
 
-if(numericCharacters === true){
+if(numeric === true){
   superArray = superArray.concat(numericCharacters);
 }
 
 // if the user says yes to any confirm, we should add that character bank to a super array so that we can then randomize that superArray by the length the user chose
 
 for (var i = 0; i < passwordLength; i++) {
-  // randomize the superArray have it return one character from the array per loop push taht character into the final password array
-  
-}
-
+  // randomize the superArray have it return one character from the array per loop push that character into the final password array
+var randomIndex = Math.floor(Math.random() * superArray.length);
+    finalPassword.push(superArray[randomIndex]);
+  }
 // how to return an array as a string without the commas? **HINT look up join
+
 return finalPassword.join('');
-
 }
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
-
 }
-
-// Add event listener to generate button
+   //Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+
